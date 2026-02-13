@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <nav>
+        <h2>Portfolio</h2>
+        <button id="themeToggle">🌙</button>
+    </nav>
+
+    <section id="about">
+        <div class="container">
+            <h1 id="greeting"></h1>
+            <h2>About Me</h2>
+            <!-- change this -->
+            <p>I'm a passionate developer focused on creating clean, functional web applications. I enjoy solving problems and learning new technologies. Currently exploring modern JavaScript and responsive design.</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img"></div>
+                    <h3>E-Commerce Platform</h3>
+                    <p>A responsive online store with cart functionality and product filtering built with vanilla JavaScript.</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-img"></div>
+                    <h3>Weather Dashboard</h3>
+                    <p>Real-time weather app displaying forecasts with interactive charts and location search features.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <form id="contactForm">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="formMessage"></p>
+        </div>
+    </section>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
