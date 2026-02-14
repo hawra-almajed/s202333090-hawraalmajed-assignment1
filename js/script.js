@@ -16,14 +16,6 @@ themeToggle.addEventListener('click', () => {
     localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
 });
 
-// Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-        e.preventDefault();
-        document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-    });
-});
-
 // Form interaction
 const form = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
@@ -32,5 +24,4 @@ form.addEventListener('submit', e => {
     e.preventDefault();
     formMessage.textContent = 'Message sent successfully!';
     form.reset();
-    setTimeout(() => formMessage.textContent = '', 3000);
 });
