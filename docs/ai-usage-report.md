@@ -1,83 +1,76 @@
-
-# AI Usage Report - Portfolio Assignment
+# AI Usage Report - Portfolio Assignment 2
 
 ## Project Overview
 
-This portfolio assignment required creating a responsive personal website with the following requirements:
-
-- **About Me Section:** 2-3 sentence introduction with personal tagline
-- **Projects Section:** Minimum 2 projects with titles, descriptions, and images
-- **Contact Section:** Functional contact form with Name, Email, and Message fields
-- **Responsive Design:** Display optimization for desktop, tablet, and mobile devices using CSS Grid/Flexbox
-- **Interactive Features:** At least one JavaScript feature including dark/light theme toggle, time-based greeting message, and form interactions
+This assignment built upon the Assignment 1 portfolio by adding interactive features, API integration, animations, and improved user feedback. The following AI tools were used throughout development.
 
 ---
 
 ## Tools Used & Use Cases
 
+### Claude AI (Anthropic)
+**Use Case:** Mentorship, Guided Learning, Code Review, Debugging
+
+Claude AI was the primary tool used throughout Assignment 2. It was used in a mentorship style — explaining concepts first, then guiding implementation rather than generating complete solutions. Key areas where Claude assisted:
+
+- **Tab Switching Feature:** Explained the concept of using `data-category` attributes and `querySelectorAll` to filter DOM elements dynamically. Claude explained the logic before I wrote the code myself.
+- **API Integration:** Guided the integration of the Advice Slip API, explaining the `fetch()` chain, how to handle JSON responses, and how to handle errors with `.catch()`.
+- **Error Handling:** Explained why empty `.catch()` blocks are a problem and guided me to add user-friendly error messages.
+- **CSS Animations:** Explained `@keyframes`, `transition`, and `transform` properties and their role in improving UX.
+- **Debugging:** Helped identify bugs such as typos in element IDs and a `form` vs `from` typo in a keyframe definition.
+
 ### AWS CodeWhisperer
-**Use Case:** Code Generation  
-AWS CodeWhisperer was used to generate the initial HTML, CSS, and JavaScript structure based on the project requirements. This tool significantly accelerated the development process by providing starter code that aligned with the portfolio requirements.
+**Use Case:** Initial Code Generation (Assignment 1 base)
 
-### GitHub Copilot (ChatGPT-4 Mini)
-**Use Case:** Code Explanation and Debugging  
-GitHub Copilot was utilized to explain code concepts and JavaScript features that were unfamiliar. This was particularly helpful for understanding advanced JavaScript patterns and confirming the correct implementation of specific functionalities.
+AWS CodeWhisperer was used in Assignment 1 to generate the initial HTML, CSS, and JavaScript structure. This boilerplate carried forward into Assignment 2 as the starting point, with all new features written manually on top of it.
 
-### Google Search + Copilot Integration
-**Use Case:** Research and Best Practices  
-Used as a complementary tool to research CSS best practices, particularly for implementing dark/light mode functionality and responsive design patterns.
+### GitHub Copilot
+**Use Case:** CSS Styling Generation
+
+GitHub Copilot was used to generate CSS styling code to shorten development time, particularly for layout and visual design. All generated CSS was reviewed and understood before being included in the project.
 
 ---
 
-## Benefits & Challenges
+## What I Wrote vs What AI Generated
 
-### Benefits
-1. **Time Efficiency:** AI tools helped me complete the assignment in under 2 days, which would have taken considerably longer using manual coding.
-2. **Learning Through Explanation:** GitHub Copilot's code explanations helped me understand JavaScript concepts like `preventDefault()` and the `reset()` method more deeply.
-3. **Best Practice Guidance:** AI suggestions introduced me to efficient CSS patterns, such as using CSS variables for color schemes and implementing smooth transitions.
-4. **Reduced Initial Setup Time:** AI-generated boilerplate code allowed me to focus on customization and refinement rather than starting from scratch.
+| Feature | Written By |
+|--------|-----------|
+| Initial HTML/CSS structure | AWS CodeWhisperer (Assignment 1) |
+| CSS styling | GitHub Copilot (reviewed and modified) |
+| Tab switching JS logic | Me (with conceptual guidance from Claude) |
+| Advice API fetch function | Me (with structural guidance from Claude) |
+| Form validation logic | Me |
+| Active tab highlight logic | Me |
+| HTML structure updates | Me |
 
-### Challenges
-1. **Code Understanding:** Initial AI-generated code required careful review and explanation to ensure I understood what was being implemented.
-2. **Customization Requirements:** Generated code sometimes needed modifications to match specific design preferences and project needs.
-3. **Over-reliance Prevention:** Required conscious effort to ensure I was learning concepts rather than simply using AI-generated code passively.
+---
+
+## Benefits
+
+1. **Concept-first learning:** Claude always explained the *why* before the *how*, which helped me understand rather than just copy.
+2. **Debugging support:** Having an AI explain error messages saved significant time.
+3. **API discovery:** Claude helped identify a working free API when the original Quotable API had an expired certificate.
+4. **Time efficiency:** AI-generated CSS and boilerplate allowed focus on learning JavaScript interactivity rather than spending time on styling details.
+
+## Challenges
+
+1. **Avoiding over-reliance:** Required conscious effort to attempt code before asking for help.
+2. **Dead APIs:** The first suggested API (Quotable) had an expired SSL certificate, requiring a switch mid-development.
+3. **Understanding async fetch:** The `.then()` chain took time to fully understand.
 
 ---
 
 ## Learning Outcomes
 
-### Technical Skills
-- **JavaScript Event Handling:** Learned the importance of `preventDefault()` for controlling default browser behaviors in form submissions.
-- **Form Management:** Understood how to use the `reset()` method to clear form inputs after submission.
-- **CSS Variables for Theming:** Discovered an efficient pattern for implementing dark/light mode by using CSS custom properties (variables) and toggling a class on the body element.
-- **Smooth Transitions:** Learned that adding CSS transitions to the body element creates a smooth visual experience when switching between themes.
-
-### Workflow Improvements
-- Recognized the value of AI tools in accelerating development while maintaining code understanding.
-- Developed a habit of reviewing and testing all AI-generated code before implementation.
-- Learned to use AI as an explanatory tool rather than just a code generator.
+- **DOM Traversal:** Selecting multiple elements with `querySelectorAll` and looping with `forEach`
+- **Data Attributes:** Using `data-category` to tag and filter HTML elements
+- **Fetch API:** Making real HTTP requests, parsing JSON, and handling errors
+- **CSS Animations:** Writing `@keyframes` and applying `transition` for smooth UI effects
+- **Debugging:** Using the browser console (`F12`) to identify and fix runtime errors
+- **Async JS:** Understanding why `fetch` values must be used inside `.then()` callbacks
 
 ---
 
-## Responsible Use & Modifications
+## Responsible Use Statement
 
-### Code Review Process
-All AI-generated code was thoroughly reviewed before implementation. This included:
-- Reading through generated HTML structure to ensure semantic correctness
-- Testing JavaScript functionality in the browser to verify expected behavior
-- Validating CSS styling against responsive design requirements
-
-### Modifications and Improvements
-1. **HTML Structure:** The initial generated code was refined to include proper semantic HTML with clear section divisions and comments for better code organization.
-2. **CSS Enhancements:** The dark mode implementation was improved by leveraging CSS variables for colors, making the codebase more maintainable and allowing for consistent theme switching.
-3. **JavaScript Functionality:** Form validation and user feedback were enhanced to provide better user experience.
-
-### Academic Integrity
-- Code was modified, tested, and understood before inclusion in the project
-- This report documents all AI tool usage transparently to maintain academic integrity
-
----
-
-## Documentation Writing
-
-This AI Usage Report was written with the assistance of Claude AI (Claude Haiku model) after providing an initial draft. The AI tool helped structure the report according to best practices, organize the information into clear sections, and improve the clarity and professionalism of the documentation while maintaining the original content and insights from the assignment.
+All AI assistance was used to support learning, not replace it. AI-generated code was reviewed, tested, and understood before being included. Claude was used as a tutor, AWS CodeWhisperer provided initial scaffolding, and Copilot assisted with styling — all with full understanding of the output.
