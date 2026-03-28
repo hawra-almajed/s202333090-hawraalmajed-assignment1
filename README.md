@@ -1,130 +1,114 @@
-# Personal Portfolio Website
+# Assignment 2 – Interactive Portfolio
 
-A responsive personal portfolio website showcasing my projects and skills as a Computer Science student at KFUPM.
+A modern portfolio website built on top of Assignment 1, with enhanced interactivity, animation, and dynamic user experience.
 
-## Project Description
+## Project Overview
 
-This portfolio website is a modern, single-page application designed to highlight my work, introduce myself, and provide a contact method. The site features:
+This portfolio has been upgraded with interactive features that make it more engaging and user-friendly. Visitors can filter project cards, fetch live advice from an API, toggle themes, and submit the contact form with immediate feedback.
 
-- **About Me Section:** A brief introduction about my background, interests, and career aspirations in web development
-- **Projects Section:** A showcase of 2+ projects with titles, descriptions, and visual representations
-- **Contact Form:** A functional contact form for visitors to reach out directly
-- **Responsive Design:** Optimized for desktop, tablet, and mobile devices using CSS Flexbox and Grid layouts
-- **Dark/Light Theme Toggle:** User-friendly theme switching with persistent storage
-- **Time-Based Greeting:** Dynamic greeting message that changes based on the time of day
-- **Form Validation:** HTML5 validation and user feedback for form submissions
+## New Features Added
+
+- Project tab filtering (All / Web / Research) — filters cards dynamically without page reload
+- Advice of the Day — fetches a random piece of advice from a public API with refresh and error handling
+- CSS animations — fade-in section transitions and hover lift effect on project cards
+- Active tab highlighting with smooth transitions
+- Custom form feedback message on submission
 
 ## Technologies Used
 
-- **HTML5:** Semantic markup structure
-- **CSS3:** Responsive design with Flexbox/Grid, CSS variables for theming, and smooth transitions
-- **JavaScript (ES6+):** Interactive features including theme toggle, dynamic greetings, and form handling
-- **LocalStorage API:** For persisting user theme preferences
+- HTML5 for semantic page structure
+- CSS3 for responsive layout, animations, and theming
+- JavaScript (ES6+) for interactive controls, DOM updates, and API communication
+- Fetch API for retrieving advice data
+- LocalStorage API for storing theme preference
 
-## Setup Instructions
+## Running the Project Locally
 
 ### Prerequisites
-- A modern web browser (Chrome, Firefox, Safari, or Edge)
-- A text editor (optional, for local development)
+- Modern browser (Chrome, Firefox, Safari, Edge)
+- Optional: local server for development
 
-### Running Locally
-
-1. **Clone or Download the Repository**
+### Steps
+1. Clone or download the repository:
    ```bash
    git clone <repository-url>
    cd s202333090-hawraalmajed-assignment1
    ```
+2. Open `index.html` directly, or start a local server:
+   ```bash
+   # Python
+   python -m http.server 8000
 
-2. **Navigate to the Project Directory**
-   - Open the project folder in your file explorer or terminal
-
-3. **Run the Website**
-   - **Option A:** Open `index.html` directly in your web browser
-   - **Option B:** Use a local server (recommended for development)
-     ```bash
-     # Using Python 3
-     python -m http.server 8000
-     
-     # Using Node.js (if you have http-server installed)
-     npx http-server
-     ```
-   - Then navigate to `http://localhost:8000` in your browser
-
-4. **Explore the Features**
-   - Toggle between dark and light themes using the button in the navigation
-   - Submit the contact form and receive feedback
-   - The greeting message will update based on the current time of day
-
-## AI Tool Usage
-
-This project was developed with assistance from AI tools including AWS CodeWhisperer, GitHub Copilot, and Claude AI. These tools were used to:
-
-- Generate initial code structure and boilerplate
-- Explain code concepts and JavaScript features
-- Provide guidance on CSS best practices for responsive design and theming
-- Assist with documentation writing
-
-For a detailed breakdown of how each AI tool was used, what was learned, and how the code was reviewed and modified, please refer to [docs/ai-usage-report.md](docs/ai-usage-report.md).
+   # Node.js
+   npx http-server
+   ```
+3. Visit `http://localhost:8000` if using a server.
 
 ## Project Structure
 
 ```
 s202333090-hawraalmajed-assignment1/
-├── index.html                 # Main HTML file
+├── index.html
 ├── css/
-│   └── style.css             # Styling and responsive design
+│   └── style.css
 ├── js/
-│   └── script.js             # Interactive features
+│   └── script.js
 ├── assets/
-│   └── images/               # Project showcase images
+│   └── images/
 ├── docs/
-│   ├── ai-usage-report.md   # Detailed AI tool usage documentation
+│   ├── ai-usage-report.md
 │   └── technical-documentation.md
-├── README.md                 # This file
-└── LICENSE (optional)
+└── README.md
 ```
 
-## Features in Detail
+## Feature Details
 
-### Dark/Light Theme Toggle
-Click the moon/sun icon in the navigation to switch between themes. Your preference is saved locally.
+### Project Filtering
+- Clicking the tabs updates project cards instantly
+- Supports filtering by `web`, `research`, or all categories
+- Provides active state styling for clear navigation
 
-### Dynamic Greeting
-The website displays a personalized greeting that changes based on the time of day:
-- Morning (6 AM - 11:59 AM): "Good Morning!"
-- Afternoon (12 PM - 5:59 PM): "Good Afternoon!"
-- Evening (6 PM - 5:59 AM): "Good Evening!"
+### Advice of the Day
+- Retrieves a fresh quote from `https://api.adviceslip.com/advice`
+- Shows a loading message during the request
+- Displays an error message if the API call fails
+
+### Theme Toggle
+- Dark/light theme switch available in the header
+- Saves the selected theme in `localStorage`
+- Remembers the preference on page reload
 
 ### Contact Form
-The contact form includes:
-- Name field (required)
-- Email field (required, with HTML5 email validation)
-- Message textarea (required)
-- Responsive success message upon submission
+- Prevents default form submission behavior
+- Displays a custom success message when submitted
+- Clears form fields after submission
 
+## AI Tools Used
+
+This assignment used Claude AI for mentorship, guidance, and code review throughout the development process. Claude helped refine feature requirements, troubleshoot JavaScript logic, and improve the structure of this README.
+
+Final styling and visual polish were completed with assistance from Amazon AI.
 
 ## Learning Outcomes
 
-This project was a valuable learning experience in:
-- Responsive web design principles
-- JavaScript event handling and DOM manipulation
-- CSS variables and theming techniques
-- Working effectively with AI development tools
-- Code review and understanding AI-generated code
+This project helped reinforce:
+- DOM manipulation and event-driven JavaScript
+- Fetching and handling external API data
+- Responsive and animated UI design
+- Local state persistence with browser storage
 
-## Future Enhancements
+## Future Improvements
 
-Potential improvements for future versions:
-- Backend integration for email notifications
-- Additional project case studies
-- Blog section
-- Skills/testimonials section
+- Add backend integration for contact submissions
+- Expand the project gallery with more examples
+- Add a blog or testimonials section
+- Improve accessibility and keyboard support
 
 ## Author
 
-Hawra Almajed (s202333090)  
+Hawra Almajed (s202333090)
 Computer Science Student at KFUPM
 
 ---
 
-For more details on the technical implementation, see [docs/technical-documentation.md](docs/technical-documentation.md).
+For detailed technical documentation, see [docs/technical-documentation.md](docs/technical-documentation.md).

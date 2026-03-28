@@ -91,5 +91,18 @@ adviceBtn.addEventListener("click", () => {
     fetchAdvice();
 })
 
+// Form Validation
+// const contactForm = document.getElementById("contactForm");
+// const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+// contactForm.addEventListener("submit", (e) => {
+//     e.preventDefault();
 
+//     const nameInput = contactForm.elements["name"].value;
+//     const emailInput = contactForm.elements["name"].value;
+//     const passwordInput = contactForm.elements["name"].value;
+
+//     if (!emailRegex.test(emailInput))
+//         formMessage.textContent = "Please enter a valid email address.";
+//     else formMessage.textContent = "Your message has been sent successfully."
+// })
