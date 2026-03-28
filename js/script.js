@@ -32,13 +32,25 @@ const webBtn = document.getElementById("webBtn");
 const researchBtn = document.getElementById("researchBtn");
 const projects = document.querySelectorAll(".project-card");
 
+allBtn.classList.remove("active");
+webBtn.classList.remove("active");
+researchBtn.classList.remove("active");
+
 allBtn.addEventListener("click", () => {
+    researchBtn.classList.remove("active");
+    webBtn.classList.remove("active");
+    allBtn.classList.add("active");
+
     projects.forEach(project => {
         project.style.display = "block";
     });
 });
 
 webBtn.addEventListener("click", () => {
+    researchBtn.classList.remove("active");
+    allBtn.classList.remove("active");
+    webBtn.classList.add("active");
+    
     projects.forEach(project => {
         if (project.getAttribute("data-category") === "web")
             project.style.display = "block";
@@ -47,6 +59,9 @@ webBtn.addEventListener("click", () => {
 });
 
 researchBtn.addEventListener("click", () => {
+    allBtn.classList.remove("active");
+    webBtn.classList.remove("active");
+    researchBtn.classList.add("active");
     projects.forEach(project => {
         if (project.getAttribute("data-category") === "research")
             project.style.display = "block";
@@ -56,13 +71,25 @@ researchBtn.addEventListener("click", () => {
 
 // Quote API
 const contentEl = document.getElementById("content");
+const adviceBtn = document.getElementById("adviceBtn");
 
-fetch("https://api.adviceslip.com/advice")
+function fetchAdvice() {
+    contentEl.textContent = "Loading..."
+    fetch("https://api.adviceslip.com/advice")
     .then(res => res.json())
     .then(data => {
         contentEl.textContent = data.slip.advice;
     })
     .catch(error => {
-//LATER
+        contentEl.textContent = "Failed to load advice. Please try again.";
     });
+}
+
+fetchAdvice(); // 1st call
+
+adviceBtn.addEventListener("click", () => {
+    fetchAdvice();
+})
+
+
 
