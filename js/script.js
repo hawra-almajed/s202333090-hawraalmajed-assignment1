@@ -54,3 +54,15 @@ researchBtn.addEventListener("click", () => {
     });
 });
 
+// Quote API
+const contentEl = document.getElementById("content");
+
+fetch("https://api.adviceslip.com/advice")
+    .then(res => res.json())
+    .then(data => {
+        contentEl.textContent = data.slip.advice;
+    })
+    .catch(error => {
+//LATER
+    });
+
