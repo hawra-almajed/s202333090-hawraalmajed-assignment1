@@ -25,3 +25,32 @@ form.addEventListener('submit', e => {
     formMessage.textContent = 'Message sent successfully!';
     form.reset();
 });
+
+// Tab Switching (Projects)
+const allBtn = document.getElementById("allBtn");
+const webBtn = document.getElementById("webBtn");
+const researchBtn = document.getElementById("researchBtn");
+const projects = document.querySelectorAll(".project-card");
+
+allBtn.addEventListener("click", () => {
+    projects.forEach(project => {
+        project.style.display = "block";
+    });
+});
+
+webBtn.addEventListener("click", () => {
+    projects.forEach(project => {
+        if (project.getAttribute("data-category") === "web")
+            project.style.display = "block";
+        else project.style.display = "none";
+    });
+});
+
+researchBtn.addEventListener("click", () => {
+    projects.forEach(project => {
+        if (project.getAttribute("data-category") === "research")
+            project.style.display = "block";
+        else project.style.display = "none";
+    });
+});
+
